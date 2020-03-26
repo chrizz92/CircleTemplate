@@ -4,7 +4,6 @@ using System;
 
 namespace TestProjectCircle
 {
-
     /// <summary>
     ///This is a test class for CircleTest and is intended
     ///to contain all CircleTest Unit Tests
@@ -12,7 +11,6 @@ namespace TestProjectCircle
     [TestClass()]
     public class CircleTest
     {
-
         /// <summary>
         ///A test for Circle Constructor
         ///</summary>
@@ -54,7 +52,6 @@ namespace TestProjectCircle
             target.X = x;
             Assert.AreEqual(target.X, x, 0.01, "Ändern von X liefert falsches Ergebnis");
         }
-
 
         [TestMethod()]
         public void Constructor_ParameterVisibleFalse_ShouldGetVisibleFalse()
@@ -220,7 +217,6 @@ namespace TestProjectCircle
             Assert.AreEqual(0, circle.GetGapTo(otherCircle), 0.01, "einfache Überlappung stimmt nicht");
         }
 
-
         [TestMethod()]
         public void GetGapTo_TwoCircles_ShouldOverlapCompletely()
         {
@@ -233,7 +229,7 @@ namespace TestProjectCircle
         public void GetGapTo_TwoCircles45Degrees_ShouldReturnSQRT2()
         {
             Circle circle = new Circle(0, 0, 10 * Math.Sqrt(2));
-            Circle otherCircle = new Circle(15, 15, 4 * Math.Sqrt(2));  // 45 Grad 
+            Circle otherCircle = new Circle(15, 15, 4 * Math.Sqrt(2));  // 45 Grad
             Assert.AreEqual(Math.Sqrt(2), circle.GetGapTo(otherCircle), 0.01, "Abstand bei 45 Grad stimmt nicht");
         }
 
@@ -241,7 +237,7 @@ namespace TestProjectCircle
         public void GetGapTo_TwoCircles45DegreesOverlap_ShouldReturn0()
         {
             Circle circle = new Circle(0, 0, 10 * Math.Sqrt(2));
-            Circle otherCircle = new Circle(15, 15, 5 * Math.Sqrt(2));  // 45 Grad 
+            Circle otherCircle = new Circle(15, 15, 5 * Math.Sqrt(2));  // 45 Grad
             Assert.AreEqual(0, circle.GetGapTo(otherCircle), 0.01, "Berührung bei 45 Grad stimmt nicht");
         }
 
@@ -249,10 +245,9 @@ namespace TestProjectCircle
         public void GetGapTo_TwoCircles45DegreesOverlapCompletely_ShouldReturn0()
         {
             Circle circle = new Circle(0, 0, 10 * Math.Sqrt(2));
-            Circle otherCircle = new Circle(15, 15, 6 * Math.Sqrt(2));  // 45 Grad 
+            Circle otherCircle = new Circle(15, 15, 6 * Math.Sqrt(2));  // 45 Grad
             Assert.AreEqual(0, circle.GetGapTo(otherCircle), 0.01, "Überlagerung bei 45 Grad stimmt nicht");
         }
-
 
         /// <summary>
         /// tests for size comparing based on radius
